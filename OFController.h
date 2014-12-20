@@ -10,6 +10,7 @@
 #import <AddressBook/AddressBook.h>
 #import "OFUtilities.h"
 
+
 @protocol OpenFeedbackDelegate;
 
 @interface OFController : NSWindowController {
@@ -48,6 +49,8 @@
 	// Miscellaneous
 	id openFeedback;
 	id<OpenFeedbackDelegate> delegate;
+    
+
 }
 
 - (IBAction)presentFeedbackPanelForSupport:(id)sender;
@@ -65,5 +68,4 @@ NSString *urlEscape(NSString *str);
 
 @property (assign) id openFeedback;
 @property (assign) id<OpenFeedbackDelegate> delegate;
-
 @end

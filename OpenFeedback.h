@@ -18,6 +18,7 @@
 @interface OpenFeedback : NSObject {
 	OFController *windowController;
 	id delegate;
+
 }
 
 - (IBAction)presentFeedbackPanelForSupport:(id)sender;

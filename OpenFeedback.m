@@ -32,8 +32,8 @@ static NSString *kGBLastCrashCheckTimeDefaultsKey = @"GBLastCrashCheckTime";
 	NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"OpenFeedback" ofType:@"nib"];
 	if(!path)
 	{
-		NSBundle *current = [NSBundle bundleForClass:[self class]];
-		NSString *frameworkPath = [[[NSBundle mainBundle] sharedFrameworksPath] stringByAppendingFormat:@"/OpenFeedback.framework", [current bundleIdentifier]];
+		//NSBundle *current = [NSBundle bundleForClass:[self class]];
+		NSString *frameworkPath = [[[NSBundle mainBundle] sharedFrameworksPath] stringByAppendingFormat:@"/OpenFeedback.framework"];
 		NSBundle *framework = [NSBundle bundleWithPath:frameworkPath];
 		path = [framework pathForResource:@"OpenFeedback" ofType:@"nib"];
 	}	

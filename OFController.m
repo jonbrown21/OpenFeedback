@@ -24,6 +24,7 @@
 	[self populateEmailAddresses];
 	[[self window] setTitle:[NSString stringWithFormat:@"%@ Feedback", OFHostAppDisplayName()]];
 	[txtCrashTitle setStringValue:[NSString stringWithFormat:[txtCrashTitle stringValue], OFHostAppDisplayName()]];
+
 }
 
 - (IBAction)presentFeedbackPanelForSupport:(id)sender
@@ -176,7 +177,8 @@
 	}
 
 	[piStatus startAnimation:self];
-	
+    
+    
 	// Build our POST data dictionary
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 	
@@ -219,7 +221,9 @@
 	// Ask the delegate to handle the request. If the delegate returns NO, we should not handle request ourselves.
 	if (delegateCanHandle) {
 		if (![self.delegate openFeedback:self.openFeedback willSendData:dict]) {
+            
 			[piStatus stopAnimation:self];
+            
 			[[self window] close];
 			return;
 		}
@@ -235,7 +239,7 @@
 	
 	NSString *post = [info componentsJoinedByString:@"&"];
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+	NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
 	
 	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
 	[request setURL:[NSURL URLWithString:submitFeedbackURL]];
@@ -250,7 +254,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
 	[piStatus stopAnimation:self];
-	
+    
 	NSAlert *alert = [[[NSAlert alloc] init] autorelease];
 	[alert addButtonWithTitle:@"OK"];
 	[alert setMessageText:@"Feedback Sent"];
@@ -266,8 +270,9 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-	[piStatus stopAnimation:self];
-    	
+        [piStatus stopAnimation:self];
+
+    
 	NSAlert *alert = [[[NSAlert alloc] init] autorelease];
 	[alert addButtonWithTitle:@"OK"];
 	[alert setMessageText:@"Can't Send Feedback"];
