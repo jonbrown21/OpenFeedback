@@ -4,10 +4,9 @@ OpenFeedback is a Cocoa framework which allows your users to submit bug reports,
 
 Screenshots
 -------
-![Support Request](http://cdn.tyler.fm/blog/of-question.png)
-![Feature Request](http://cdn.tyler.fm/blog/of-feature.png)
-![Bug Report](http://cdn.clickontyler.com/blog/of-bug.png)
-![Crash Report](http://cdn.tyler.fm/blog/of-crash.png)
+![Support Request](https://raw.githubusercontent.com/jonbrown21/OpenFeedback/master/screens/1.png)
+![Feature Request](https://raw.githubusercontent.com/jonbrown21/OpenFeedback/master/screens/2.png)
+![Bug Report](https://raw.githubusercontent.com/jonbrown21/OpenFeedback/master/screens/3.png)
 
 INSTALL
 -------
