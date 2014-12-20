@@ -1,4 +1,4 @@
-OpenFeedback
+OpenFeedback (Yosimite and Install Directory Fix)
 =========
 OpenFeedback is a Cocoa framework which allows your users to submit bug reports, feature requests, and ask support questions from directly within your application. It can also automatically submit crash reports from your app on restart. All of this data can be stored in [Shine](http://github.com/tylerhall/Shine/tree/master) or connected to your own custom server-side script. And, like [Sparkle](http://sparkle.andymatuschak.org/), OpenFeedback can be integrated into your application in just a few minutes - no code required.
 
